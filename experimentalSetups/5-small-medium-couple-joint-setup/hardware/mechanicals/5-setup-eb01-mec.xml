@@ -6,7 +6,7 @@
         <param name="MotioncontrolVersion"> 6 </param>
         <param name="Joints"> 1 </param> 
         <param name="AxisMap">              0                     </param>   
-        <param name="AxisName">             "medium"               </param>
+        <param name="AxisName">             "small"               </param>
         <param name="AxisType">             "revolute"            </param>
         <param name="Encoder">              182.044               </param>
         <param name="fullscalePWM">         32000                 </param>
@@ -19,8 +19,8 @@
     </group>                                                 
                                                              
     <group name="LIMITS">                                    
-        <param name="hardwareJntPosMax">    360                  </param>
-        <param name="hardwareJntPosMin">   -360                  </param>
+        <param name="hardwareJntPosMax">    0                  </param>
+        <param name="hardwareJntPosMin">    0                  </param>
         <param name="rotorPosMin">          0                    </param> 
         <param name="rotorPosMax">          0                    </param>
     </group>                                                 

@@ -21,8 +21,8 @@
                 </group>                    
                 <group name="FIRMWARE">
                     <param name="major">            3           </param>    
-                    <param name="minor">            5           </param> 
-                    <param name="build">            3           </param>
+                    <param name="minor">            6           </param> 
+                    <param name="build">            0           </param>
                 </group>
             </group>
             
@@ -38,7 +38,7 @@
                                                                    
                 <!-- <group name="ENCODER1">                            
                     <param name="type">             eomc_enc_aksim2     </param>  
-                    <param name="port">             CONN:P8             </param>
+                    <param name="port">             CONN:P6             </param>
                     <param name="position">         eomc_pos_atjoint    </param>
                     <param name="resolution">       524288              </param> 
                     <param name="tolerance">        0.7                 </param>  
@@ -50,13 +50,13 @@
                     <param name="position">         none                </param>
                     <param name="resolution">       0                   </param> 
                     <param name="tolerance">        0                   </param>  
-                </group>                                 
+                </group>                                  
                                                                    
                 <group name="ENCODER2">                            
                     <param name="type">             roie                </param>
                     <param name="port">             CAN1:1:0            </param>
                     <param name="position">         atmotor             </param>
-                    <param name="resolution">       3760                </param>
+                    <param name="resolution">       5200                </param>
                     <param name="tolerance">        3.6                 </param>  
                 </group> 
  
