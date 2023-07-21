@@ -17,7 +17,7 @@
         <param name="jntVelMax">                18000               </param>
         <param name="motorNominalCurrents">     5000                </param>
         <param name="motorPeakCurrents">        10000               </param>
-        <param name="motorOverloadCurrents">    6784               </param>
+        <param name="motorOverloadCurrents">    6784               </param> <!-- temperature raw value ~= 80 deg -->
         <param name="motorPwmLimit">            32000               </param>
     </group>
 

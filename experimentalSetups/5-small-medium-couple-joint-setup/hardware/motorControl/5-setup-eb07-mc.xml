@@ -12,12 +12,12 @@
     <!-- joint number                           0                -->
     <!-- joint name -->
     <group name="LIMITS">
-        <param name="jntPosMax">                0                   </param>
-        <param name="jntPosMin">                0                   </param>
+        <param name="jntPosMax">                180                  </param>
+        <param name="jntPosMin">                -180                   </param>
         <param name="jntVelMax">                18000               </param>
-        <param name="motorNominalCurrents">     5000                </param>
-        <param name="motorPeakCurrents">        10000               </param>
-        <param name="motorOverloadCurrents">    20000               </param>
+        <param name="motorNominalCurrents">     5100                </param>
+        <param name="motorPeakCurrents">        20300               </param>
+	<param name="motorOverloadCurrents">    6784               </param> <!-- temperature raw value ~= 80 deg -->
         <param name="motorPwmLimit">            32000               </param>
     </group>
 
