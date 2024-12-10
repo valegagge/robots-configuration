@@ -19,9 +19,9 @@
                                                                       
 <group name="CALIBRATION">                                            
 <!--                                                small                          -->
-<param name="calibrationType">                      10                       </param>
+<param name="calibrationType">                      12                       </param> 
                                                                                       
-<param name="calibration1">                         3200                    </param>
+<param name="calibration1">                         53380                   </param> <!-- pwm 3200 for calib 10 -->
 <!--<param name="calibration1">                         800                    </param>--> <!-- 20934 amo (12) -4200 (10)  63820 aksim2-->
 <param name="calibration2">                         0                        </param> 
 <param name="calibration3">                         0                        </param> 
@@ -29,7 +29,7 @@
                                                                       
 <param name="calibration4">                         0                        </param>
 <param name="calibration5">                         0                        </param>
-<param name="calibrationZero">                      106                      </param> <!-- -106(10)-->
+<param name="calibrationZero">                      0                      </param> <!-- -106(10)-->
 <param name="calibrationDelta">                     2.0                        </param>
                                                                       
 <param name="startupPosition">                      0                        </param>

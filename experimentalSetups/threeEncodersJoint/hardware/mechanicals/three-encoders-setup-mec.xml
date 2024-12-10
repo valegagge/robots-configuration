@@ -12,15 +12,15 @@
         <param name="fullscalePWM">         32000                     </param>
         <param name="ampsToSensor">         1000.0                    </param>
         <param name="Gearbox_M2J">          100                       </param>
-        <param name="Gearbox_E2J">          64                         </param> <!--64 when using AMO  1 when using aksim (is the number of sectors)-->
+        <param name="Gearbox_E2J">          1                         </param> <!--64 when using AMO  1 when using aksim (is the number of sectors)-->
         <param name="useMotorSpeedFbk">     1                         </param> 
         <param name="MotorType">            "MOOG_C2900576"           </param>
         <param name="Verbose"> 0 </param>                    
     </group>                                                 
                                                              
     <group name="LIMITS">                                    
-        <param name="hardwareJntPosMax">    110                  </param>
-        <param name="hardwareJntPosMin">    -110                  </param>
+        <param name="hardwareJntPosMax">    0                  </param>
+        <param name="hardwareJntPosMin">    0                  </param>
         <param name="rotorPosMin">          0                    </param> 
         <param name="rotorPosMax">          0                    </param>
     </group>                                                 
