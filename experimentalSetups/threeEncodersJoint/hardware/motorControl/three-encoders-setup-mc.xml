@@ -33,6 +33,7 @@
     <group name="CONTROLS">
         <param name="positionControl">          POS_PID_DEFAULT     </param>
         <param name="velocityControl">          POS_PID_DEFAULT     </param>
+        <param name="posDirectControl">  JOINT_DIRECT_OUT_VEL_CTRL  </param>
         <param name="mixedControl">             POS_PID_DEFAULT     </param>
         <param name="torqueControl">            TRQ_PID_DEFAULT     </param>
         <param name="currentPid">               2FOC_CUR_CONTROL    </param>
@@ -42,7 +43,36 @@
 
     <!-- default position PID: begin -->
 
+
+    <group name="JOINT_DIRECT_OUT_VEL_CTRL">
+            <param name="controlLaw">             direct                    </param>
+        <param name="outputType">             velocity                  </param>
+        <param name="fbkControlUnits">        machine_units             </param>
+        <param name="outputControlUnits">     machine_units             </param>
+        <param name="kff">                        1       </param>
+        <param name="kp">                         5        </param>
+        <param name="kd">                         0       </param>
+        <param name="maxOutput">              32000         </param>
+    </group>
+
     <group name="POS_PID_DEFAULT">
+        <param name="controlLaw">             minjerk               </param>
+        <param name="outputType">             velocity                   </param>
+        <param name="fbkControlUnits">        metric_units          </param>
+        <param name="outputControlUnits">     machine_units         </param>
+        <param name="kp">           5              </param>
+        <param name="kd">           0                </param>
+        <param name="ki">           0              </param>
+        <param name="maxOutput">    32000           </param>
+        <param name="maxInt">       3000           </param>
+        <param name="stictionUp">   0              </param>
+        <param name="stictionDown"> 0              </param>
+        <param name="kff">          1              </param>
+     </group> 
+
+
+     
+    <!-- <group name="POS_PID_DEFAULT">
         <param name="controlLaw">             minjerk               </param>
         <param name="outputType">             pwm                   </param>
         <param name="fbkControlUnits">        metric_units          </param>
@@ -55,7 +85,7 @@
         <param name="stictionUp">   0              </param>
         <param name="stictionDown"> 0              </param>
         <param name="kff">          0              </param>
-    </group>
+    </group> -->
 
     <!-- default position PID: end -->
 

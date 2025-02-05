@@ -22,7 +22,7 @@
 <param name="calibrationType">                      12                       </param>
                                                                                       <!--
 <param name="calibration1">                         58233                    </param> --> 
-<param name="calibration1">                         20934                    </param> <!-- 20934 amo (12) -4200 (10)  63820 aksim2-->
+<param name="calibration1">                         20800                    </param> <!-- 20934 amo (12) -4200 (10)  63820 aksim2-->
 <param name="calibration2">                         0                        </param> 
 <param name="calibration3">                         0                        </param> 
                                                                       

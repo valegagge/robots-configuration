@@ -12,7 +12,7 @@
     <xi:include href="wrappers/motorControl/three-encoders-setup-mc_wrapper.xml" />
     <xi:include href="wrappers/motorControl/three-encoders-setup-mc_remapper.xml" />
     <!-- nws wrapper -->
-    <xi:include href="wrappers/motorControl/three-encoders-setup-rawval-nws_wrapper.xml" />
+    <!--    <xi:include href="wrappers/motorControl/three-encoders-setup-rawval-nws_wrapper.xml" /> -->
 
     <!-- TORSO -->
     <xi:include href="hardware/motorControl/three-encoders-setup-mc.xml" />
@@ -21,7 +21,7 @@
     <xi:include href="calibrators/three-encoders-setup-calib.xml" />
 
     <!-- ROBOMETRY -->
-    <xi:include href="telemetry/telemetry.xml" />
+	    <!-- <xi:include href="telemetry/telemetry.xml" /> -->
 
   </devices>
 </robot>

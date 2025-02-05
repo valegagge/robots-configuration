@@ -48,7 +48,7 @@
                 <!-- AMO Encoder 16384 if using calib12 or 10 (x64 is defined in mech file at E2J)-->
 	            <group name="ENCODER1">                            
                     <param name="type">             amo           </param>  
-                    <param name="port">             CONN:P6       </param>
+                    <param name="port">             CONN:P9       </param>
                     <param name="position">         atjoint       </param>
                     <param name="resolution">       -1048576      </param> 
                     <param name="tolerance">        0.703         </param>  
