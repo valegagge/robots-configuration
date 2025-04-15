@@ -19,18 +19,18 @@
                                                                       
     <group name="CALIBRATION">                                            
     <!--                      torso_pitch_mj1_real_aksim2  torso_pitch_mj1_fake_amo                        -->
-    <param name="calibrationType">         12                     12            </param>
-    <param name="calibration1">            42418                  45670           </param> <!-- 42459 (12) -4200 (10)  42468 aksim2-->
+    <param name="calibrationType">         10                     12            </param>
+    <param name="calibration1">            2500                  45670           </param> <!-- 42459 (12) -4200 (10)  42468 aksim2-->
     <param name="calibration2">            0                      0             </param> 
     <param name="calibration3">            0                      0             </param> 
                                                                         
                                                                         
     <param name="calibration4">            0                      0             </param>
     <param name="calibration5">            0                      0             </param>
-    <param name="calibrationZero">         0                      0             </param> <!-- -100(10)-->
+    <param name="calibrationZero">         108                    0             </param> <!-- -100(10)-->
     <param name="calibrationDelta">        0                      0             </param>
                                                                         
-    <param name="startupPosition">         0                      0             </param>
+    <param name="startupPosition">         0                    0             </param>
     <param name="startupVelocity">         30                     30            </param>
     <param name="startupMaxPwm">           4000                   4000          </param>
     <param name="startupPosThreshold">     2                      2             </param>
