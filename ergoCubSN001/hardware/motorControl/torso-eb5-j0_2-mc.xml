@@ -51,14 +51,14 @@
         <param name="outputType">            velocity                  </param>
         <param name="fbkControlUnits">        machine_units          </param>
         <param name="outputControlUnits">     machine_units         </param>
-        <param name="kp">           10000       10000       -1500       </param>
-        <param name="kd">           0           0           0           </param>
-        <param name="ki">           8000        5000       -1000        </param>
+        <param name="kp">           5           5          5       </param>
+        <param name="kd">           0           0          0           </param>
+        <param name="ki">           0           0          0       </param>
         <param name="maxOutput">   10000       10000        8000        </param>
         <param name="maxInt">      10000        5000        1000        </param>
         <param name="stictionUp">   0           0           0           </param>
         <param name="stictionDown"> 0           0           0           </param>
-        <param name="kff">          0           0           0           </param>
+        <param name="kff">          1           1           1           </param>
     </group>
 
     <!-- default position PID: end -->
