@@ -29,7 +29,7 @@
         <param name="Verbose">                    0            0             </param>
         <param name="AutoCalibration">            0            0             </param>
         <param name="HasHallSensor">              0            0             </param>
-	<param name="TemperatureSensorType">      PT1000         NONE         </param>
+        <param name="TemperatureSensorType">      PT1000       NONE          </param>
         <param name="HasRotorEncoder">            1            1             </param>
         <param name="HasRotorEncoderIndex">       1            1             </param>
         <param name="HasSpeedEncoder">            0            0             </param>

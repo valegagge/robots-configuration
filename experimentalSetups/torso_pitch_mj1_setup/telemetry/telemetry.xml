@@ -15,7 +15,7 @@
         <param name="logIRawValuesPublisher">false</param>
         <param name="saveBufferManagerConfiguration">true</param>
         <param name="experimentName">torso_pitch_mj1_amo_aksim_temp</param>
-        <param name="path">./data_test_TDB/</param>
+        <param name="path">./torso_pitch_mj1_telemetry_data/</param>
         <param name="n_samples">80000000</param>
         <param name="save_periodically">false</param>
         <param name="save_period">10.0</param>
