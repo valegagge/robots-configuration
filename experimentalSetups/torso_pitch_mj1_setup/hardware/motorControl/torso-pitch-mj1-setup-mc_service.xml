@@ -39,9 +39,9 @@
                 <!-- Swap the two columns if you want to use the AMO as real encoder -->
                 <group name="ENCODER1">                            
                     <param name="type">               aksim2           amo          </param>  
-                    <param name="port">               CONN:P6          CONN:P9      </param>
+                    <param name="port">               CONN:P8          CONN:P9      </param>
                     <param name="position">           atjoint          atjoint      </param>
-                    <param name="resolution">        -524288            -16384         </param> <!-- AMO resolution when used as absolute encoder = -1048576 -->
+                    <param name="resolution">        -524288            -1048576          </param> <!-- AMO resolution when used as absolute encoder = -1048576, as incremental -16384 -->
                     <param name="tolerance">          0.703            0.703        </param>  
                 </group>     
 	                                                  
