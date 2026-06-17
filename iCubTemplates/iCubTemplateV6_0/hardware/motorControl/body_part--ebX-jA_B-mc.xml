@@ -54,12 +54,13 @@
              The tag name MUST be defined below.
         -->
         <param name="positionControl"> user_name_tag_of_position_control       </param> <!--  EXAMPLE: MY_POS_CTRL_OUT_PWM, MY_POS_CTRL_OUT_CURRENT, MY_POS_CTRL_OUT_VEL -->
-        <param name="velocityControl"> user_name_tag_of_position_control       </param> <!-- If joint can't perform velocity control, use "none", else use user_name_tag_of_position_control as explained above.-->
-        <param name="mixedControl">    user_name_tag_of_position_control       </param> <!-- If joint can't perform mixed control, use "none". EXAMPLE: MY_POS_CTRL_OUT_PWM, MY_POS_CTRL_OUT_CURRENT, MY_POS_CTRL_OUT_VEL -->
+        <param name="velocityControl"> user_name_tag_of_position_control       </param> <!-- If joint can't perform velocity control, use "NONE", else use user_name_tag_of_position_control as explained above.-->
+        <param name="mixedControl">    user_name_tag_of_position_control       </param> <!-- If joint can't perform mixed control, use "NONE". EXAMPLE: MY_POS_CTRL_OUT_PWM, MY_POS_CTRL_OUT_CURRENT, MY_POS_CTRL_OUT_VEL -->
         
-        <param name="torqueControl">   user_name_tag_of_torque_control          </param> <!--  If joint can't perform torque control, use "none". EXAMPLE: MY_TRQ_CONTROL                     -->
-        <param name="currentPid">      user_name_tag_of_current_control         </param> <!-- If joint can't perform current control, use "none". In case of EMS+2FOC it has to be defined, otherwise in case of MC4+ set as none EXAMPLE: MY_CUR_CONTROL;  -->
-        <param name="speedPid">        user_name_tag_of_low-level_speed_control </param> <!-- If joint can't perform low-level speed control, use "none". In case of EMS+2FOC it has to be defined, otherwise in case of MC4+ set as none. EXAMPLE: MY_SPEED_CONTROL -->
+        <param name="torqueControl">   user_name_tag_of_torque_control          </param> <!--  If joint can't perform torque control, use "NONE". EXAMPLE: MY_TRQ_CONTROL                     -->
+        <param name="currentPid">      user_name_tag_of_current_control         </param> <!-- If joint can't perform current control, use "NONE". In case of EMS+2FOC it has to be defined, otherwise in case of MC4+ set as NONE EXAMPLE: MY_CUR_CONTROL;  -->
+        <param name="positionDirect"> NONE       </param>
+        <param name="velocityDirect"> NONE       </param> <!-- If joint can't perform low-level speed control, use "NONE". In case of EMS+2FOC it has to be defined, otherwise in case of MC4+ set as NONE. EXAMPLE: MY_SPEED_CONTROL -->
     </group>
     
     <!-- WARNING: in updating files do not change control unit types (outputControlUnits, fbkControlUnits) -->

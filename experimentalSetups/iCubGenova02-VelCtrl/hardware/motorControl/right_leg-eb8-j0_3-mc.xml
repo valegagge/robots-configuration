@@ -29,9 +29,12 @@
 
      <group name="CONTROLS">
        <param name="positionControl">  JOINT_POS_VEL_CTRL        JOINT_POS_VEL_CTRL       JOINT_POS_VEL_CTRL       JOINT_POS_VEL_CTRL         </param>
-       <param name="velocityControl">  none                      none                     none                     none                       </param>
+       <param name="velocityControl">  NONE                      NONE                     NONE                     NONE                       </param>
+       <param name="mixedControl">  JOINT_POS_VEL_CTRL        JOINT_POS_VEL_CTRL       JOINT_POS_VEL_CTRL       JOINT_POS_VEL_CTRL         </param>
        <param name="torqueControl">    JOINT_TRQ_VEL_CTRL        JOINT_TRQ_VEL_CTRL       JOINT_TRQ_VEL_CTRL       JOINT_TRQ_VEL_CTRL         </param>
        <param name="currentPid">       2FOC_CUR_CONTROL          2FOC_CUR_CONTROL         2FOC_CUR_CONTROL         2FOC_CUR_CONTROL           </param>
+       <param name="positionDirect">  NONE        NONE       NONE       NONE         </param>
+       <param name="velocityDirect">  NONE        NONE       NONE       NONE         </param>
     </group>
 
     <group name="JOINT_POS_VEL_CTRL">

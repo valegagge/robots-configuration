@@ -32,10 +32,11 @@
         <param name="mixedControl">            JOINT_MINJERK_OUT_PWM_CTRL  JOINT_MINJERK_OUT_PWM_CTRL   </param>
         <param name="posDirectControl">        JOINT_DIRECT_OUT_PWM_CTRL   JOINT_DIRECT_OUT_PWM_CTRL    </param>                
         <param name="velDirectControl">        JOINT_DIRECT_OUT_PWM_CTRL   JOINT_DIRECT_OUT_PWM_CTRL    </param>
-        <param name="torqueControl">           none                        none                         </param>
+        <param name="torqueControl">           NONE                        NONE                         </param>
         
-        <param name="currentPid">              none none </param>
-        <param name="speedPid">                none none </param>
+        <param name="currentPid">              NONE NONE </param>
+        <param name="positionDirect">         NONE  NONE   </param>
+        <param name="velocityDirect">         NONE  NONE   </param>
     </group>
     
     <group name="JOINT_MINJERK_OUT_PWM_CTRL">

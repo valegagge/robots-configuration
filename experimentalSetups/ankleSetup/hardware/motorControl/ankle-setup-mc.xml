@@ -31,7 +31,8 @@
         <param name="mixedControl">              POS_PID_DEFAULT  </param>
         <param name="torqueControl">             TRQ_PID_DEFAULT  </param>
         <param name="currentPid">                2FOC_CUR_CONTROL </param>
-        <param name="speedPid">                  2FOC_VEL_CONTROL </param>
+        <param name="positionDirect">           NONE  </param>
+        <param name="velocityDirect">           NONE  </param>
     </group>
     <!-- default position PID: begin -->
     <group name="POS_PID_DEFAULT">

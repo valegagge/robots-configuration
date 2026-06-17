@@ -26,9 +26,12 @@
 
     <group name="CONTROLS">
         <param name="positionControl">  name </param> <!-- User name tag of position control. The tag name should be present below. EXAMPLE: MY_PID_POS  -->
-        <param name="velocityControl">  name </param> <!--  User name tag of velocity control. The tag name should be present below. If joint can't perform velocity control, use "none". EXAMPLE: MY_PID_VEL  -->
-        <param name="torqueControl">    name </param> <!--  User name tag of torque control. The tag name should be present below. If joint can't perform torque control, use "none". EXAMPLE: MY_PID_TRQ      -->
-        <param name="currentPid">       name </param> <!-- User name tag of current control. The tag name should be present below. If joint can't perform current control, use "none". EXAMPLE: MY_PID_CUR     -->
+        <param name="velocityControl">  name </param>
+        <param name="mixedControl">  name </param> <!--  User name tag of velocity control. The tag name should be present below. If joint can't perform velocity control, use "NONE". EXAMPLE: MY_PID_VEL  -->
+        <param name="torqueControl">    name </param> <!--  User name tag of torque control. The tag name should be present below. If joint can't perform torque control, use "NONE". EXAMPLE: MY_PID_TRQ      -->
+        <param name="currentPid">       name </param>
+        <param name="positionDirect">  NONE </param>
+        <param name="velocityDirect">  NONE </param> <!-- User name tag of current control. The tag name should be present below. If joint can't perform current control, use "NONE". EXAMPLE: MY_PID_CUR     -->
     </group>
 
     <group name="MY_PID_POS">
