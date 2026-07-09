@@ -19,12 +19,13 @@
                     <param name="major">            2           2       </param>
                     <param name="minor">            0           0       </param>
                 </group>
-                <group name="FIRMWARE">
-                    <param name="major">            2           0       </param>
-                    <param name="minor">            0           0       </param>
-                    <param name="build">            13          0       </param>
+                 <group name="FIRMWARE">
+                    <param name="major">            2          3       </param>
+                    <param name="minor">            3          11      </param>
+                    <param name="build">            0          0       </param>
                 </group>
             </group>
+            
 
             <group name="JOINTMAPPING">
 

@@ -30,13 +30,13 @@
         <param name="AutoCalibration">       0           0             </param>
         <param name="Verbose">               0           0             </param>
         <param name="HasHallSensor">         1           1             </param>
-        <param name="HasTempSensor">         0           0             </param>
         <param name="HasRotorEncoder">       1           1             </param>
         <param name="HasRotorEncoderIndex">  0           0             </param>
-        <param name="HasSpeedEncoder">       0           0             </param>
+        <param name="TemperatureSensorType"> NONE          NONE        </param>
         <param name="RotorIndexOffset">      0           0             </param>
         <param name="MotorPoles">            8           8             </param>
-    </group>
+        <param name="HasSpeedEncoder">       0           0             </param>
+     </group>
 
  <group name="COUPLINGS"> 
 

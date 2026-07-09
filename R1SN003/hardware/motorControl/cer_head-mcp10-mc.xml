@@ -29,13 +29,11 @@
         <param name="positionControl">         JOINT_MINJERK_OUT_PWM_CTRL  JOINT_MINJERK_OUT_PWM_CTRL   </param>
         <param name="velocityControl">         JOINT_MINJERK_OUT_PWM_CTRL  JOINT_MINJERK_OUT_PWM_CTRL   </param>
         <param name="mixedControl">            JOINT_MINJERK_OUT_PWM_CTRL  JOINT_MINJERK_OUT_PWM_CTRL   </param>
-        <param name="posDirectControl">        JOINT_DIRECT_OUT_PWM_CTRL   JOINT_DIRECT_OUT_PWM_CTRL    </param>                
-        <param name="velDirectControl">        JOINT_DIRECT_OUT_PWM_CTRL   JOINT_DIRECT_OUT_PWM_CTRL    </param>
+        <param name="positionDirect">          JOINT_DIRECT_OUT_PWM_CTRL   JOINT_DIRECT_OUT_PWM_CTRL    </param>                
+        <param name="velocityDirect">          JOINT_DIRECT_OUT_PWM_CTRL   JOINT_DIRECT_OUT_PWM_CTRL    </param>
         <param name="torqueControl">           NONE                        NONE                         </param>
-        
-        <param name="currentPid">              NONE NONE </param>
-        <param name="positionDirect">         NONE  NONE   </param>
-        <param name="velocityDirect">         NONE  NONE   </param>
+        <param name="currentPid">              NONE                        NONE                         </param>
+
     </group>
     
     <group name="JOINT_MINJERK_OUT_PWM_CTRL">
@@ -65,7 +63,8 @@
         <param name="maxOutput">               3360         3360        </param>                
         <param name="maxInt">                  3360         1500        </param>                             
         <param name="stictionUp">                 0            0        </param>          
-        <param name="stictionDown">                0            0        </param>        
+        <param name="stictionDown">                0            0        </param> 
+        <param name="shift">                       0            0        </param>        
     </group>
     
     <group name="IMPEDANCE">
