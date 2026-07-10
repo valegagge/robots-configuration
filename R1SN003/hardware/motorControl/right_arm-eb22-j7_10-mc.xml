@@ -38,7 +38,7 @@
         <param name="torqueControl">            NONE                NONE                NONE                NONE                </param>
         <param name="currentPid">               NONE                NONE                NONE                NONE                </param>
         <param name="positionDirect">          DIR_POS_PID_DEFAULT     DIR_POS_PID_DEFAULT     DIR_POS_PID_DEFAULT     DIR_POS_PID_DEFAULT     </param>
-        <param name="velocityDirect">          DIR_POS_PID_DEFAULT     DIR_POS_PID_DEFAULT     DIR_POS_PID_DEFAULT     DIR_POS_PID_DEFAULT     </param>
+        <param name="velocityDirect">           NONE                NONE                NONE               NONE   </param>
     </group>
 
 

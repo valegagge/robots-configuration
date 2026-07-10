@@ -38,7 +38,7 @@
         <param name="torqueControl">            TRQ_PID_OUTPUT_CURR   TRQ_PID_OUTPUT_CURR </param>
         <param name="currentPid">               2FOC_CUR_CONTROL      2FOC_CUR_CONTROL    </param>
         <param name="positionDirect">          DIR_POS_PID_DEFAULT       DIR_POS_PID_DEFAULT     </param>
-        <param name="velocityDirect">          DIR_POS_PID_DEFAULT       DIR_POS_PID_DEFAULT     </param>
+        <param name="velocityDirect">          NONE       NONE    </param>
     </group>
 
 
