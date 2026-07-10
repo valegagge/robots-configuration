@@ -36,8 +36,8 @@
         <param name="mixedControl">             POS_PID_DEFAULT     POS_PID_DEFAULT     POS_PID_DEFAULT     </param>
         <param name="torqueControl">            NONE                NONE                NONE                </param>
         <param name="currentPid">               2FOC_CUR_CONTROL    2FOC_CUR_CONTROL    2FOC_CUR_CONTROL    </param>
-        <param name="positionDirect">          NONE     NONE     NONE     </param>
-        <param name="velocityDirect">          NONE     NONE     NONE     </param>
+        <param name="positionDirect">          DIR_POS_PID_DEFAULT     DIR_POS_PID_DEFAULT     DIR_POS_PID_DEFAULT     </param>
+        <param name="velocityDirect">          DIR_POS_PID_DEFAULT     DIR_POS_PID_DEFAULT     DIR_POS_PID_DEFAULT     </param>
     </group>
 
 
@@ -59,6 +59,22 @@
     </group>
 
     <!-- default position PID: end -->
+
+    <group name="DIR_POS_PID_DEFAULT">
+        <param name="controlLaw">             direct                </param>
+        <param name="outputType">             current               </param>
+        <param name="fbkControlUnits">        metric_units          </param>
+        <param name="outputControlUnits">     machine_units         </param>
+        <param name="kff">          0           0           0       </param>
+        <param name="kp">          -50         -50         -50      </param>
+        <param name="kd">          -8          -8          -8      </param>
+        <param name="ki">          -220        -220        -220     </param>
+        <param name="maxOutput">    500         500         500     </param>
+        <param name="maxInt">       200         200         200     </param>
+        <param name="stictionUp">   0           0           0       </param>
+        <param name="stictionDown"> 0           0           0       </param>
+        <param name="shift">        0           0           0       </param>
+    </group>
 
 
     <!-- other default PIDs: begin -->
