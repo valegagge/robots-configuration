@@ -27,16 +27,16 @@
 
 
     <group name="CONTROLS">
-        <param name="positionControl">         JOINT_MINJERK_OUT_DC_PWM_CTRL  JOINT_MINJERK_OUT_DC_PWM_CTRL  JOINT_MINJERK_OUT_DC_PWM_CTRL  JOINT_MINJERK_OUT_WORM_VEL_CTRL   </param>
-        <param name="velocityControl">         JOINT_MINJERK_OUT_DC_PWM_CTRL  JOINT_MINJERK_OUT_DC_PWM_CTRL  JOINT_MINJERK_OUT_DC_PWM_CTRL  JOINT_MINJERK_OUT_WORM_VEL_CTRL   </param>
-        <param name="mixedControl">            JOINT_MINJERK_OUT_DC_PWM_CTRL  JOINT_MINJERK_OUT_DC_PWM_CTRL  JOINT_MINJERK_OUT_DC_PWM_CTRL  JOINT_MINJERK_OUT_WORM_VEL_CTRL   </param>
-        <param name="torqueControl">           NONE                           NONE                           NONE                           NONE                              </param>                                              
-        <param name="currentPid">              2FOC_CUR_CONTROL               2FOC_CUR_CONTROL               2FOC_CUR_CONTROL               2FOC_CUR_CONTROL                  </param>
-        <param name="positionDirect">          JOINT_DIRECT_OUT_DC_PWM_CTRL   JOINT_DIRECT_OUT_DC_PWM_CTRL   JOINT_DIRECT_OUT_DC_PWM_CTRL   JOINT_DIRECT_OUT_WORM_VEL_CTRL    </param>
-        <param name="velocityDirect">          JOINT_DIRECT_OUT_DC_PWM_CTRL   JOINT_DIRECT_OUT_DC_PWM_CTRL   JOINT_DIRECT_OUT_DC_PWM_CTRL   JOINT_DIRECT_OUT_WORM_VEL_CTRL    </param>
+        <param name="positionControl">         JOINT_MINJERK_OUT_DC_PWM_CTRL  JOINT_MINJERK_OUT_DC_PWM_CTRL  JOINT_MINJERK_OUT_DC_PWM_CTRL  JOINT_MINJERK_OUT_WORM_VEL_CTRL       </param>
+        <param name="velocityControl">         JOINT_MINJERK_OUT_DC_PWM_CTRL  JOINT_MINJERK_OUT_DC_PWM_CTRL  JOINT_MINJERK_OUT_DC_PWM_CTRL  JOINT_MINJERK_OUT_WORM_VEL_CTRL       </param>
+        <param name="mixedControl">            JOINT_MINJERK_OUT_DC_PWM_CTRL  JOINT_MINJERK_OUT_DC_PWM_CTRL  JOINT_MINJERK_OUT_DC_PWM_CTRL  JOINT_MINJERK_OUT_WORM_VEL_CTRL       </param>
+        <param name="torqueControl">           NONE                           NONE                           NONE                           NONE                                  </param>                                              
+        <param name="currentPid">              CURRENT_PID_DEFAULT            CURRENT_PID_DEFAULT            CURRENT_PID_DEFAULT            CURRENT_PID_DEFAULT                   </param>
+        <param name="positionDirect">          JOINT_DIRECT_OUT_DC_PWM_CTRL   JOINT_DIRECT_OUT_DC_PWM_CTRL   JOINT_DIRECT_OUT_DC_PWM_CTRL   JOINT_POS_DIRECT_OUT_WORM_VEL_CTRL    </param>
+        <param name="velocityDirect">          JOINT_DIRECT_OUT_DC_PWM_CTRL   JOINT_DIRECT_OUT_DC_PWM_CTRL   JOINT_DIRECT_OUT_DC_PWM_CTRL   JOINT_VEL_DIRECT_OUT_WORM_PWM_CTRL    </param>
     </group>
     
-    
+    <!-- DC motors (0, 1, 2)-->
     <group name="JOINT_MINJERK_OUT_DC_PWM_CTRL">
 	    <param name="controlLaw">             minjerk                   </param>
         <param name="outputType">             pwm                       </param>
@@ -68,6 +68,8 @@
         <param name="shift">                      0            0           0         0       </param>
     </group>
 
+
+<!-- WORM motors (3) -->
     <group name="JOINT_MINJERK_OUT_WORM_VEL_CTRL">
         <param name="controlLaw">             minjerk                   </param>
         <param name="outputType">             velocity                  </param>
@@ -81,22 +83,38 @@
         <param name="maxInt">                 0 0 0           0         </param>
         <param name="shift">                  0 0 0           0         </param>
     </group>
-    
-    <group name="JOINT_DIRECT_OUT_WORM_VEL_CTRL">
+
+
+    <group name="JOINT_POS_DIRECT_OUT_WORM_VEL_CTRL">
         <param name="controlLaw">             direct                    </param>
         <param name="outputType">             velocity                  </param>
         <param name="fbkControlUnits">        machine_units             </param> 
         <param name="outputControlUnits">     machine_units             </param> 
         <param name="kff">                    0 0 0           1         </param> 
         <param name="kp">                     0 0 0           5         </param>       
-        <param name="kd">                     0 0 0           0         </param>
-        <param name="ki">                     0 0 0           0         </param>             
+        <param name="kd">                     0 0 0           0         </param>             
+        <param name="ki">                     0 0 0           0         </param>
         <param name="maxOutput">              0 0 0       32000         </param>
         <param name="maxInt">                 0 0 0           0         </param>
-        <param name="shift">                  0 0 0           0         </param>                
+        <param name="shift">                  0 0 0           0         </param>
     </group>
     
-    <group name="2FOC_CUR_CONTROL">
+    <!--Pid for direct velocity control: input target motor velocity output a pwm -->
+    <group name="JOINT_VEL_DIRECT_OUT_WORM_PWM_CTRL">
+        <param name="controlLaw">             direct                    </param>
+        <param name="outputType">             pwm                       </param>
+        <param name="fbkControlUnits">        machine_units             </param> 
+        <param name="outputControlUnits">     machine_units             </param> 
+        <param name="kff">                    0 0 0           0        </param> 
+        <param name="kp">                     0 0 0        1280        </param>       
+        <param name="kd">                     0 0 0        6144        </param>
+        <param name="ki">                     0 0 0           1        </param>             
+        <param name="maxOutput">              0 0 0          14        </param>
+        <param name="maxInt">                 0 0 0       32000        </param>
+        <param name="shift">                  0 0 0       32000        </param>                
+    </group>
+    
+    <group name="CURRENT_CONTROL">
         <param name="controlLaw">          low_lev_current      </param> 
         <param name="fbkControlUnits">     machine_units        </param> 
         <param name="outputControlUnits">  machine_units        </param>
@@ -109,18 +127,6 @@
         <param name="maxInt">              32000     32000     32000     32000      </param>         
     </group>
 
-    <group name="2FOC_VEL_CONTROL">
-        <param name="controlLaw">          low_lev_speed        </param> 
-        <param name="fbkControlUnits">     machine_units        </param> 
-        <param name="outputControlUnits">  machine_units        </param>
-        <param name="kff">                 0          0         0         0  </param>
-        <param name="kp">                 12         12        12      1280  </param>       
-        <param name="kd">                  0          0         0      6144  </param>       
-        <param name="ki">                 16         16        16         1  </param>
-        <param name="shift">              10         10        10        14  </param>
-        <param name="maxOutput">       32000      32000     32000     32000  </param>                 
-        <param name="maxInt">          32000      32000     32000     32000  </param>        
-    </group>
 
     
     <group name="IMPEDANCE">

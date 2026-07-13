@@ -24,19 +24,17 @@
     </group>
     
     <group name="CONTROLS">
-        <param name="positionControl">         JOINT_MINJERK_OUT_VEL_CTRL  JOINT_MINJERK_OUT_VEL_CTRL    </param>
-        <param name="velocityControl">         JOINT_MINJERK_OUT_VEL_CTRL  JOINT_MINJERK_OUT_VEL_CTRL    </param>
-        <param name="mixedControl">            JOINT_MINJERK_OUT_VEL_CTRL  JOINT_MINJERK_OUT_VEL_CTRL    </param>
-        <param name="torqueControl">           NONE                        NONE                          </param>                                       
-        <param name="currentPid">              2FOC_CUR_CONTROL            2FOC_CUR_CONTROL              </param>
-        <param name="positionDirect">          JOINT_DIRECT_OUT_PWM_CTRL   JOINT_DIRECT_OUT_PWM_CTRL    </param>
-        <param name="velocityDirect">          JOINT_DIRECT_OUT_PWM_CTRL   JOINT_DIRECT_OUT_PWM_CTRL    </param>
+        <param name="positionControl">         JOINT_MINJERK_OUT_VEL_CTRL      JOINT_MINJERK_OUT_VEL_CTRL    </param>
+        <param name="velocityControl">         JOINT_MINJERK_OUT_VEL_CTRL      JOINT_MINJERK_OUT_VEL_CTRL    </param>
+        <param name="mixedControl">            JOINT_MINJERK_OUT_VEL_CTRL      JOINT_MINJERK_OUT_VEL_CTRL    </param>
+        <param name="torqueControl">           NONE                            NONE                          </param>                                       
+        <param name="currentPid">              CURRENT_CONTROL                 CURRENT_CONTROL               </param>
+        <param name="positionDirect">          NONE                            NONE                          </param>
+        <param name="velocityDirect">          JOINT_VEL_DIRECT_OUT_PWM_CTRL   JOINT_VEL_DIRECT_OUT_PWM_CTRL </param>
     </group>
 
 
-    <!-- default position PID: begin -->
-
-    
+    <!--Pid for position control input a target pos output a velocity -->
     <group name="JOINT_MINJERK_OUT_VEL_CTRL">
 	    <param name="controlLaw">             minjerk                   </param>
         <param name="outputType">             velocity                  </param>
@@ -47,26 +45,28 @@
         <param name="kd">                         0            0        </param> 
         <param name="ki">                         0            0        </param>                       
         <param name="maxOutput">              32000        32000        </param> 
-        <param name="maxInt">                 32000      32000     </param>                     
+        <param name="maxInt">                 32000        32000        </param>                     
     </group>
 
-    <group name="JOINT_DIRECT_OUT_PWM_CTRL">
-	    <param name="controlLaw">             direct                    </param>
-        <param name="outputType">             pwm                      </param>
-        <param name="fbkControlUnits">        machine_units             </param> 
-        <param name="outputControlUnits">     machine_units             </param>
-        <param name="kff">                        0            0        </param> 
-        <param name="kp">                         12            12        </param>          
-        <param name="kd">                         0            0        </param>
-        <param name="ki">                         16            16        </param>                       
-        <param name="maxOutput">              32000        32000        </param> 
-        <param name="maxInt">                 32000        32000        </param>
-        <param name="stictionUp">             32000        32000        </param>     
-        <param name="stictionDown">           32000        32000        </param>    
-        <param name="shift">                  10              10        </param>              
+
+    <!--Pid for direct velocity control: input target motor velocity output a pwm -->
+    <group name="JOINT_VEL_DIRECT_OUT_PWM_CTRL">
+	    <param name="controlLaw">             direct                </param>
+        <param name="outputType">             pwm                   </param>
+        <param name="fbkControlUnits">        machine_units         </param> 
+        <param name="outputControlUnits">     machine_units         </param>
+        <param name="kff">                    0            0        </param> 
+        <param name="kp">                     12           12       </param>          
+        <param name="kd">                     0            0        </param>
+        <param name="ki">                     16           16       </param>                       
+        <param name="maxOutput">              32000        32000    </param> 
+        <param name="maxInt">                 32000        32000    </param>
+        <param name="stictionUp">             32000        32000    </param>     
+        <param name="stictionDown">           32000        32000    </param>    
+        <param name="shift">                  10           10       </param>              
     </group>
     
-    <group name="2FOC_CUR_CONTROL">
+    <group name="CURRENT_CONTROL">
         <param name="controlLaw">          low_lev_current      </param> 
         <param name="fbkControlUnits">     machine_units        </param> 
         <param name="outputControlUnits">  machine_units        </param>
@@ -79,44 +79,6 @@
         <param name="maxInt">              32000     32000  </param>         
     </group>
 
-    <group name="2FOC_VEL_CONTROL">
-        <param name="controlLaw">          low_lev_speed        </param> 
-        <param name="fbkControlUnits">     machine_units        </param> 
-        <param name="outputControlUnits">  machine_units        </param>
-        <param name="kff">                 0          0     </param>
-        <param name="kp">                 12         12     </param>       
-        <param name="kd">                  0          0     </param>       
-        <param name="ki">                 16         16     </param>
-        <param name="shift">              10         10     </param>
-        <param name="maxOutput">       32000      32000     </param>                 
-        <param name="maxInt">          32000      32000     </param>        
-    </group>
-
-
-<!-- custom PIDs: begin -->
-    <group name="TRQ_PID_OUTPUT_CURR">
-        <param name="controlLaw">          torque                       </param>
-        <param name="outputType">          current                      </param>
-        <param name="fbkControlUnits">     metric_units                 </param>
-        <param name="outputControlUnits">  machine_units                </param>
-        <param name="kp">            -150       -100       </param>
-        <param name="kd">             0          0         </param>
-        <param name="ki">             0          0         </param>
-        <param name="maxOutput">      2500       2500      </param>
-        <param name="maxInt">         200        200       </param>
-        <param name="ko">             0          0         </param>
-        <param name="stictionUp">     0          0         </param>
-        <param name="stictionDown">   0          0         </param>
-        <param name="kff">            1          1         </param>
-        <param name="viscousPos">    -0.0001    -0.0001    </param>
-        <param name="viscousNeg">    -0.0001    -0.0001    </param>
-        <param name="coulombPos">     0          0         </param>
-        <param name="coulombNeg">     0          0         </param>
-        <param name="velocityThres">  0          0         </param>
-        <param name="filterType">     0          0         </param>
-        <param name="ktau">          -250       -200       </param>
-    </group>
-    <!-- custom PIDs: end -->
 
     <group name="IMPEDANCE">
         <param name="stiffness">       0      0    </param>    

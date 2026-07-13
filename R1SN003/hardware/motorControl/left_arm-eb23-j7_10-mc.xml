@@ -32,14 +32,14 @@
     </group>
     
     <group name="CONTROLS">
-        <param name="positionControl">          POS_PID_DEFAULT     POS_PID_DEFAULT     POS_PID_DEFAULT     POS_PID_DEFAULT     </param>
-        <param name="velocityControl">          POS_PID_DEFAULT     POS_PID_DEFAULT     POS_PID_DEFAULT     POS_PID_DEFAULT     </param>
-        <param name="mixedControl">             POS_PID_DEFAULT     POS_PID_DEFAULT     POS_PID_DEFAULT     POS_PID_DEFAULT     </param>
-        <param name="torqueControl">            NONE                NONE                NONE                NONE                </param>
-        <param name="currentPid">               NONE                NONE                NONE                NONE                </param>
-        <param name="positionDirect">          DIR_POS_PID_DEFAULT     DIR_POS_PID_DEFAULT     DIR_POS_PID_DEFAULT     DIR_POS_PID_DEFAULT     </param>
-        <param name="velocityDirect">           NONE                NONE                NONE                NONE     </param>
-    </group>
+        <param name="positionControl">          POS_PID_DEFAULT        POS_PID_DEFAULT       POS_PID_DEFAULT           POS_PID_DEFAULT      </param>
+        <param name="velocityControl">          POS_PID_DEFAULT        POS_PID_DEFAULT       POS_PID_DEFAULT           POS_PID_DEFAULT      </param>
+        <param name="mixedControl">             POS_PID_DEFAULT        POS_PID_DEFAULT       POS_PID_DEFAULT           POS_PID_DEFAULT      </param>
+        <param name="torqueControl">            NONE                   NONE                  NONE                      NONE                 </param>
+        <param name="currentPid">               NONE                   NONE                  NONE                      NONE                 </param>
+        <param name="positionDirect">           DIR_POS_PID_DEFAULT    DIR_POS_PID_DEFAULT   DIR_POS_PID_DEFAULT       DIR_POS_PID_DEFAULT  </param>
+        <param name="velocityDirect">           NONE                   NONE                  NONE                      NONE                 </param>
+     </group>
 
 
     <!-- default position PID: begin -->
@@ -66,7 +66,6 @@
         <param name="outputType">               pwm             </param>
         <param name="fbkControlUnits">          metric_units    </param>
         <param name="outputControlUnits">       machine_units   </param>
-        <param name="kff">                      0           0           0           0       </param>
         <param name="kp">                       -15         -22         -22         -18     </param>
         <param name="kd">                       -2          -4          -4          -3      </param>
         <param name="ki">                       -5          -18         -18         -20     </param>
@@ -75,6 +74,7 @@
         <param name="stictionUp">               0           0           0           0       </param>
         <param name="stictionDown">             0           0           0           0       </param>
         <param name="shift">                    0           0           0           0       </param>
+        <param name="kff">                      0           0           0           0       </param>
     </group>
 
 

@@ -33,13 +33,13 @@
     </group>
 
     <group name="CONTROLS">
-        <param name="positionControl">          POS_PID_DEFAULT       POS_PID_DEFAULT     </param>
-        <param name="velocityControl">          POS_PID_DEFAULT       POS_PID_DEFAULT     </param>
-        <param name="mixedControl">             POS_PID_DEFAULT       POS_PID_DEFAULT     </param>
-        <param name="torqueControl">            TRQ_PID_OUTPUT_CURR   TRQ_PID_OUTPUT_CURR </param>
-        <param name="currentPid">               2FOC_CUR_CONTROL      2FOC_CUR_CONTROL    </param>
-        <param name="positionDirect">          DIR_POS_PID_DEFAULT       DIR_POS_PID_DEFAULT     </param>
-        <param name="velocityDirect">           NONE                  NONE    </param>
+        <param name="positionControl">          POS_PID_DEFAULT       POS_PID_DEFAULT         </param>
+        <param name="velocityControl">          POS_PID_DEFAULT       POS_PID_DEFAULT         </param>
+        <param name="mixedControl">             POS_PID_DEFAULT       POS_PID_DEFAULT         </param>
+        <param name="torqueControl">            TRQ_PID_OUTPUT_CURR   TRQ_PID_OUTPUT_CURR     </param>
+        <param name="currentPid">               CURRENT_PID_DEFAULT   CURRENT_PID_DEFAULT     </param>
+        <param name="positionDirect">           DIR_POS_PID_DEFAULT   DIR_POS_PID_DEFAULT     </param>
+        <param name="velocityDirect">           NONE                  NONE                    </param>
     </group>
 
 
@@ -81,7 +81,7 @@
 
     <!-- other default PIDs: begin -->
 
-    <group name="2FOC_CUR_CONTROL">
+    <group name="CURRENT_PID_DEFAULT">
         <param name="controlLaw">           low_lev_current     </param>
         <param name="fbkControlUnits">      machine_units       </param>
         <param name="outputControlUnits">   machine_units       </param>
@@ -94,8 +94,9 @@
         <param name="kff">                      0                   0                   </param>
     </group>
 
-    <group name="2FOC_VEL_CONTROL">
-        <param name="controlLaw">           low_lev_speed       </param>
+    <!-- not tested yet 
+    <group name="VEL_DIR_PID_DEFAULT">
+        <param name="controlLaw">           direct              </param>
         <param name="fbkControlUnits">      machine_units       </param>
         <param name="outputControlUnits">   machine_units       </param>
         <param name="kff">                      0                   0                   </param>
@@ -105,7 +106,7 @@
         <param name="shift">                    10                  10                  </param>
         <param name="maxOutput">                32000               32000               </param>
         <param name="maxInt">                   32000               32000               </param>
-    </group>
+    </group> -->
 
     <!-- other default PIDs: end -->
 
