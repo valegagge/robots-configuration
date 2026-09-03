@@ -3,7 +3,7 @@
 This document explains how to configure the `CONTROLS` group in the motor control XML files
 (e.g. `cer_base-ems1-mc.xml`). It is intended for robot integrators and configurators who may
 not have a deep background in control theory.
-If you want more details please see [this comment]([url](https://github.com/mesh-iit/sw-management/issues/248#issuecomment-5528353317)) with the complete description.  
+If you want more details please see [this comment](https://github.com/mesh-iit/sw-management/issues/248#issuecomment-5528353317) with the complete description.  
 
 ## Index
 
