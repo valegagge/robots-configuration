@@ -3,7 +3,7 @@
 
 <params xmlns:xi="http://www.w3.org/2001/XInclude" robot="myrobot" build="1">
     <group name="GENERAL">
-        <param name="MotioncontrolVersion">  6 </param> <!-- Version of motor control device.  Currently is 5.-->
+        <param name="MotioncontrolVersion">  7 </param> <!-- Version of motor control device.  Currently is 5.-->
         <param name="Joints">           1    </param> <!-- Number of joints manged from this device. Usually is the number of joints controlled by Ethernet board. -->
         <param name="AxisMap">          0    </param> <!-- Map joint number from  user to firmware.  -->
         <param name="AxisName">         "Joint0"   </param>  <!-- String wich describes name of joint. see http://wiki.icub.org/wiki/ICub_joints for name convention.  -->
