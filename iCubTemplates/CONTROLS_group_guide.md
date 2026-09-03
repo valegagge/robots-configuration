@@ -3,6 +3,24 @@
 This document explains how to configure the `CONTROLS` group in the motor control XML files
 (e.g. `cer_base-ems1-mc.xml`). It is intended for robot integrators and configurators who may
 not have a deep background in control theory.
+If you want more details please see [this comment]([url](https://github.com/mesh-iit/sw-management/issues/248#issuecomment-5528353317)) with the complete description.  
+
+## Index
+
+- [Overview](#overview)
+- [Control modes: what each parameter means](#control-modes-what-each-parameter-means)
+- [The trajectory-generator modes: position, velocity, mixed](#the-trajectory-generator-modes-position-velocity-mixed)
+  - [Available trajectory generator](#available-trajectory-generator)
+  - [The `outputType` parameter: what does the PID drive?](#the-outputtype-parameter-what-does-the-pid-drive)
+- [A note on `velocityControl`](#a-note-on-velocitycontrol)
+- [`velocityDirect` and `positionDirect`: no trajectory generator](#velocitydirect-and-positiondirect-no-trajectory-generator)
+- [Where the PID runs: EMS vs. 2FOC](#where-the-pid-runs-ems-vs-2foc)
+- [Nested current loop inside velocity direct](#nested-current-loop-inside-velocity-direct)
+- [Worked example: `cer_base-ems1-mc.xml`](#worked-example-cer_base-ems1-mcxml)
+- [Quick reference: `controlLaw` values](#quick-reference-controllaw-values)
+
+---
+
 
 ---
 
