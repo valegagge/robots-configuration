@@ -18,7 +18,7 @@ defined later in the same file, or is set to `NONE` to disable that mode.
     <param name="velocityControl">   JOINT_MINJERK_OUT_VEL_CTRL    JOINT_MINJERK_OUT_VEL_CTRL  </param>
     <param name="mixedControl">      JOINT_MINJERK_OUT_VEL_CTRL    JOINT_MINJERK_OUT_VEL_CTRL  </param>
     <param name="torqueControl">     NONE                          NONE                        </param>
-    <param name="currentPid">        CURRENT_CONTROL               CURRENT_CONTROL             </param>
+    <param name="currentControl">    CURRENT_CONTROL               CURRENT_CONTROL             </param>
     <param name="positionDirect">    NONE                          NONE                        </param>
     <param name="velocityDirect">    JOINT_VEL_DIRECT_OUT_PWM_CTRL JOINT_VEL_DIRECT_OUT_PWM_CTRL </param>
 </group>
@@ -36,7 +36,7 @@ One value per joint is listed on each line (two joints in the example above).
 | `velocityControl` | `IVelocityControl` | Command a joint velocity through a trajectory generator (see note below) |
 | `mixedControl` | - | Combination of position and velocity target |
 | `torqueControl` | `ITorqueControl` | Direct torque command |
-| `currentPid` | `ICurrentControl` | Inner current PID running on the 2FOC board |
+| `currentControl` | `ICurrentControl` | Inner current PID running on the 2FOC board |
 | `positionDirect` | `IPositionDirect` | Direct position command, **no** trajectory generator |
 | `velocityDirect` | `IVelocityControl` direct | Direct motor velocity command, **no** trajectory generator |
 
@@ -68,7 +68,7 @@ represents**, and therefore which inner loop it feeds.
 |---|---|---|
 | `pwm` | A PWM duty-cycle command | Sent **directly** to the motor driver — no inner loop |
 | `velocity` | A motor velocity setpoint | Fed into the **velocityDirect** PID (runs on the 2FOC) |
-| `current` | A motor current setpoint | Fed into the **currentPid** loop (runs on the 2FOC) |
+| `current` | A motor current setpoint | Fed into the **currentControl** loop (runs on the 2FOC) |
 
 The cascade structure can be visualised as follows:
 
@@ -78,7 +78,7 @@ graph LR
     TG["Trajectory Generator\n(e.g. minJerk)\n— runs on EMS —"]
     PID["Joint PID\n— runs on EMS —"]
     VD["velocityDirect PID\n— runs on 2FOC —"]
-    CUR["currentPid PID\n— runs on 2FOC —"]
+    CUR["currentControl PID\n— runs on 2FOC —"]
     MOT["Motor"]
 
     U --> TG --> PID
@@ -127,9 +127,9 @@ understand the hardware split:
 |---|---|---|
 | Trajectory generator + joint PID (`positionControl`, `velocityControl`, `mixedControl`) | **EMS** | **Metric units** (degrees, degrees/s, …) |
 | `velocityDirect` PID | **2FOC** | **Machine units** (raw encoder ticks, raw DAC counts, …) |
-| `currentPid` loop | **2FOC** | **Machine units** |
+| `currentControl` loop | **2FOC** | **Machine units** |
 
-This is the reason why the PID gains for `velocityDirect` and `currentPid` look very different
+This is the reason why the PID gains for `velocityDirect` and `currentControl` look very different
 from those of the joint PID: they operate on completely different numerical scales.
 
 The `fbkControlUnits` and `outputControlUnits` parameters in each PID group reflect this:
@@ -153,7 +153,7 @@ graph LR
     TG3["Trajectory Generator\n(EMS)"]
     JPID["Joint PID\n(EMS)"]
     VDPID["velocityDirect PID\n(2FOC)"]
-    CPID["currentPid\n(2FOC)"]
+    CPID["currentControl\n(2FOC)"]
     M3["Motor"]
 
     U3 --> TG3 --> JPID -->|velocity setpoint| VDPID -->|current setpoint| CPID --> M3
@@ -168,7 +168,7 @@ graph LR
     <param name="positionControl">  JOINT_MINJERK_OUT_VEL_CTRL   ...  </param>
     <param name="velocityControl">  JOINT_MINJERK_OUT_VEL_CTRL   ...  </param>
     <param name="velocityDirect">   JOINT_VEL_DIRECT_OUT_PWM_CTRL ... </param>
-    <param name="currentPid">       CURRENT_CONTROL              ...  </param>
+    <param name="currentControl">       CURRENT_CONTROL              ...  </param>
     <param name="torqueControl">    NONE                         ...  </param>
     <param name="positionDirect">   NONE                         ...  </param>
 </group>
@@ -179,7 +179,7 @@ graph LR
 | `positionControl` | `JOINT_MINJERK_OUT_VEL_CTRL` | `minjerk` | `velocity` | EMS → 2FOC |
 | `velocityControl` | `JOINT_MINJERK_OUT_VEL_CTRL` | `minjerk` | `velocity` | EMS → 2FOC |
 | `velocityDirect` | `JOINT_VEL_DIRECT_OUT_PWM_CTRL` | `direct` | `pwm` | 2FOC only |
-| `currentPid` | `CURRENT_CONTROL` | `low_lev_current` | *(n/a)* | 2FOC only |
+| `currentControl` | `CURRENT_CONTROL` | `low_lev_current` | *(n/a)* | 2FOC only |
 | `torqueControl` | *(disabled)* | — | — | — |
 | `positionDirect` | *(disabled)* | — | — | — |
 
@@ -199,4 +199,4 @@ User command → minJerk trajectory (EMS) → joint PID (EMS) → velocity setpo
 | `minjerk` | `positionControl`, `velocityControl`, `mixedControl` | **Yes** | Only option currently available |
 | `direct` | `positionDirect`, `velocityDirect` | **No** | Input goes straight to the PID |
 | `torque` | `torqueControl` | No | Torque regulation |
-| `low_lev_current` | `currentPid` | No | Inner current loop on 2FOC |
+| `low_lev_current` | `currentControl` | No | Inner current loop on 2FOC |
