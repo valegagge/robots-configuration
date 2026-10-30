@@ -39,6 +39,7 @@
         <param name="HasSpeedEncoder">       0             0        0   0  </param>
         <param name="RotorIndexOffset">      170           9        62  89 </param>
         <param name="MotorPoles">            12            8        8   12 </param>
+        <param name="Kbemf">                 0             0        0   0  </param>
    </group>
 
     <group name="COUPLINGS"> 

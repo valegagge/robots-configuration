@@ -10,7 +10,7 @@
       <param name="verbose">            false  </param>
   </group>
   <group name="DEBUG">
-	  <param name="embBoardsConnected">    false  </param>
+	  <param name="embBoardsConnected">    true  </param>
   </group>
 
 
