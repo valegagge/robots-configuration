@@ -37,7 +37,6 @@
         <param name="RotorIndexOffset">               175           8       </param>
         <param name="MotorPoles">                     12            8       </param>
         <param name="Kbemf">                          0             0       </param>
-        pippo
     </group>
 
     <group name="COUPLINGS"> 
