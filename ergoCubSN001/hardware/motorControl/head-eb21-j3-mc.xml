@@ -19,6 +19,7 @@
         <param name="motorNominalCurrents">     700        </param>
         <param name="motorPeakCurrents">        1500       </param>
         <param name="motorPwmLimit">            3360       </param>
+        
     </group>
 
     <group name="TIMEOUTS">
